@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DFA Builder</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>DFA Builder</h1>
+
+  <div class="toolbar">
+    <label>Alphabet (comma separated):
+      <input id="alphabet" value="0,1" size="8">
+    </label>
+
+    <span class="modes">
+      <label><input type="radio" name="mode" value="add" checked> Add state</label>
+      <label><input type="radio" name="mode" value="link"> Add transition</label>
+      <label><input type="radio" name="mode" value="move"> Move</label>
+      <label><input type="radio" name="mode" value="flags"> Start / Accept</label>
+      <label><input type="radio" name="mode" value="delete"> Delete</label>
+    </span>
+
+    <button id="complete">Complete with dead state</button>
+    <button id="clear">Clear</button>
+  </div>
+
+  <svg id="canvas"></svg>
+
+  <p id="message">Click empty space to add a state.</p>
+
+  <div class="bottom">
+    <div>
+      <h2>Transition table</h2>
+      <table id="table"></table>
+    </div>
+    <div>
+      <h2>Test a string</h2>
+      <input id="input" placeholder="e.g. 0110">
+      <button id="run">Run</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
